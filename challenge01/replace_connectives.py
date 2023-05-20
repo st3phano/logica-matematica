@@ -8,8 +8,6 @@ def findLeftSideStartIndex(formula: str, connectiveStartIndex: int) -> int:
    startIndex = connectiveStartIndex - 1
 
    # search for an opening parenthesis that has no matching closing parenthesis
-   OPEN_PAREN = "("
-   CLOSE_PAREN = ")"
    openParenCount = 0
    while ((startIndex > -1) and (openParenCount < 1)):
       if (formula[startIndex] == OPEN_PAREN):
@@ -28,8 +26,6 @@ def findRightSidePastEndIndex(formula: str, connectivePastEndIndex: int) -> int:
    pastEndIndex = connectivePastEndIndex
 
    # search for a closing parenthesis that has no matching opening parenthesis
-   OPEN_PAREN = "("
-   CLOSE_PAREN = ")"
    closeParenCount = 0
    while ((pastEndIndex < len(formula)) and (closeParenCount < 1)):
       if (formula[pastEndIndex] == CLOSE_PAREN):
@@ -67,7 +63,7 @@ def replaceConditional(formula: str, beforeLeftSide: str, leftSide: str,
    return formula
 
 def replaceBiconditional(formula: str, beforeLeftSide: str, leftSide: str,
-                       rightSide: str, afterRightSide: str, printChange: bool) -> str:
+                         rightSide: str, afterRightSide: str, printChange: bool) -> str:
    if (printChange):
       print(beforeLeftSide +
             BOLD_TEXT_BLUE_BG + OPEN_PAREN + OPEN_PAREN + RESET_COLOR +
