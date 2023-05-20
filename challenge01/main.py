@@ -14,7 +14,7 @@ def main():
    
    # remove all white-space from the string
    WHITE_SPACE_REGEX = r"\s+"
-   formula = re.sub(WHITE_SPACE_REGEX, "", formula) # (r->(~p<->q))->~p->(q->(s->q))
+   formula = re.sub(WHITE_SPACE_REGEX, "", formula)
    print(f"{formula}\n")
 
    formula = replaceConnective(formula, connectives.BICOND, True, replaceBiconditional)
