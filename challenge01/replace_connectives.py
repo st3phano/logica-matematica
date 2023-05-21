@@ -40,7 +40,7 @@ def findRightSidePastEndIndex(formula: str, connectivePastEndIndex: int) -> int:
    return pastEndIndex
 
 
-def replaceConditional(formula: str, beforeLeftSide: str, leftSide: str,
+def replaceConditional(beforeLeftSide: str, leftSide: str,
                        rightSide: str, afterRightSide: str, printChange: bool) -> str:
    if (printChange):
       print(beforeLeftSide +
@@ -62,7 +62,7 @@ def replaceConditional(formula: str, beforeLeftSide: str, leftSide: str,
 
    return formula
 
-def replaceBiconditional(formula: str, beforeLeftSide: str, leftSide: str,
+def replaceBiconditional(beforeLeftSide: str, leftSide: str,
                          rightSide: str, afterRightSide: str, printChange: bool) -> str:
    if (printChange):
       print(beforeLeftSide +
@@ -110,7 +110,7 @@ def replaceConnective(formula: str, connective: str, printSteps: bool, replaceFu
       rightSide = formula[connectivePastEndIndex : rightSidePastEndIndex]
       afterRightSide = formula[rightSidePastEndIndex : ]
 
-      formula = replaceFunc(formula, beforeLeftSide, leftSide,
+      formula = replaceFunc(beforeLeftSide, leftSide,
                             rightSide, afterRightSide, printSteps)
 
    return formula
